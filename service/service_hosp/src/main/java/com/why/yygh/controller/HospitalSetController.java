@@ -24,6 +24,7 @@ import java.util.Random;
 
 @Api("医院请求控制类")
 @RestController
+@CrossOrigin
 @RequestMapping("/admin/hosp/hospitalSet")
 public class HospitalSetController {
 

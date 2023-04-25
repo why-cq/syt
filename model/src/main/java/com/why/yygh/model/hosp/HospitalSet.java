@@ -25,6 +25,7 @@ public class HospitalSet extends BaseEntity {
 	@TableField("hosname")
 	private String hosname;
 
+
 	@ApiModelProperty(value = "医院编号")
 	@TableField("hoscode")
 	private String hoscode;
