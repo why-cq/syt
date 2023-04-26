@@ -100,11 +100,11 @@ public class HospitalSetController {
     @ApiOperation("根据id获取医院设置")
     @GetMapping("getHospSet/{id}")
     public Result getHospSet(@PathVariable Long id) {
-        try {
-            int x = 1 / 0;
-        } catch (YyghException e) {
-            throw new YyghException("失败", 201);
-        }
+//        try {
+//            int x = 1 / 0;
+//        } catch (YyghException e) {
+//            throw new YyghException("失败", 201);
+//        }
         HospitalSet hospitalSet = hospitalSetService.getById(id);
         return Result.ok(hospitalSet);
 
@@ -131,6 +131,23 @@ public class HospitalSetController {
         return Result.ok();
 
     }
+
+    // 8.锁定和取消锁定
+    @ApiOperation("锁定和取消锁定")
+    @PutMapping("lockHospSet/{id}/{status}")
+    public Result lockHospSet(@PathVariable Long id,
+                              @PathVariable Integer status) {
+        // 根据id查询信息
+        HospitalSet hospitalSet = hospitalSetService.getById(id);
+        //设置状态
+        hospitalSet.setStatus(status);
+        //调用方法进行修改
+        hospitalSetService.updateById(hospitalSet);
+
+        return Result.ok();
+
+    }
+
 
 
 }
