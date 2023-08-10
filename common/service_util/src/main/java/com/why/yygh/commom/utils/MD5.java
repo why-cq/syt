@@ -1,4 +1,4 @@
-package com.why.yygh.commom;
+package com.why.yygh.commom.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
